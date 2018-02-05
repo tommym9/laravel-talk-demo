@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/posts', [
+    'as' => 'posts.all',
+    'uses' => 'PostController@index',
+    //'middleware' => ['permission:view_report_any']
+]);
