@@ -6,18 +6,17 @@
         Posts
     </div>
 
-    @if($posts)
-    @foreach( $posts as $post)
-        @php
-        /*  <a href="{{ route('companies.show', $company->slug) }}">{{ $company->name }}</a> */
-        @endphp
-        <div class="container">
-            <strong>{{ $post->title }}</strong>
-            <br />
-            Posted: <b>{{ $post->created_at->diffForHumans() }}</b>
-            <p>{{ $post->body }}</p>
-        </div>
-    @endforeach
+    @if(count($posts) > 0)
+        @foreach( $posts as $post)
+            @php
+            @endphp
+            <div class="container">
+                <strong><a href="{{ route('posts.show', $post->slug) }}">{{ $post->title }}</a></strong>
+                <br />
+                Posted: <b>{{ $post->created_at->diffForHumans() }}</b>
+                <p>{{ $post->body }}</p>
+            </div>
+        @endforeach
     @else
         There are no posts to display.
     @endif

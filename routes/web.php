@@ -16,3 +16,8 @@ Route::get('/posts', [
     'uses' => 'PostController@index',
     //'middleware' => ['permission:view_report_any']
 ]);
+
+Route::get('/posts/{post}', [
+    'as' => 'posts.show',
+    'uses' => 'PostController@show',
+]);
