@@ -93,6 +93,12 @@
             cursor: pointer;
         }
 
+        .message {
+            padding: 20px;
+            background-color: #4CAF50; /* Green */
+            color: white;
+        }
+
     </style>
 </head>
 <body>
@@ -107,6 +113,13 @@
         </nav>
 
         <div class="content">
+
+            @if(session()->has('message'))
+                <div class="message">
+                    {!! session('message') !!}
+                </div>
+            @endif
+
             @yield('content')
         </div>
     </div>
