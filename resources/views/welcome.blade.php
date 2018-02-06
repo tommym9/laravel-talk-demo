@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel Demo</title>
+    <title>Laravel</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -20,35 +20,28 @@
             height: 100vh;
             margin: 0;
         }
-
         .full-height {
             height: 100vh;
         }
-
         .flex-center {
+            align-items: center;
             display: flex;
             justify-content: center;
         }
-
         .position-ref {
             position: relative;
         }
-
         .top-right {
             position: absolute;
             right: 10px;
             top: 18px;
         }
-
-        .wrapper {
+        .content {
             text-align: center;
-            max-width: 80%;
         }
-
         .title {
             font-size: 84px;
         }
-
         .links > a {
             color: #636b6f;
             padding: 0 25px;
@@ -58,44 +51,36 @@
             text-decoration: none;
             text-transform: uppercase;
         }
-
         .m-b-md {
             margin-bottom: 30px;
         }
-
-        .container {
-            border: 1px solid grey;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-
-        .links ul,
-        .links ul li {
-            display: inline-block;
-            list-style: none;
-        }
-
-        nav li {
-            display: inline-block;
-            list-style: none;
-            margin-right: 10px;
-        }
-
     </style>
 </head>
 <body>
 <div class="flex-center position-ref full-height">
-    
-    <div class="wrapper">
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="{{ route('posts.all') }}">All Posts</a></li>
-            </ul>
-        </nav>
+    @if (Route::has('login'))
+        <div class="top-right links">
+            @auth
+                <a href="{{ url('/home') }}">Home</a>
+            @else
+                <a href="{{ route('login') }}">Login</a>
+                <a href="{{ route('register') }}">Register</a>
+            @endauth
+        </div>
+    @endif
 
-        <div class="content">
-            @yield('content')
+    <div class="content">
+        <div class="title m-b-md">
+            Laravel
+        </div>
+
+        <div class="links">
+            <a href="https://laravel.com/docs">Documentation</a>
+            <a href="https://laracasts.com">Laracasts</a>
+            <a href="https://laravel-news.com">News</a>
+            <a href="https://forge.laravel.com">Forge</a>
+            <a href="https://github.com/laravel/laravel">GitHub</a>
+            <a href="{{ route('posts.all') }}">All Posts</a>
         </div>
     </div>
 </div>

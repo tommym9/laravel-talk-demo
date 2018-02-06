@@ -16,6 +16,9 @@
     @if(count($posts) > 0)
         @foreach( $posts as $post)
             @php
+                /**
+                * - Do ANY PHP here if you like.
+                */
             @endphp
             <div class="container">
                 <strong><a href="{{ route('posts.show', $post->slug) }}">{{ $post->title }}</a></strong>
@@ -24,6 +27,11 @@
                 <p>{{ $post->body }}</p>
             </div>
         @endforeach
+
+        <div class="links">
+            {{ $posts->links() }}
+        </div>
+
     @else
         There are no posts to display.
     @endif

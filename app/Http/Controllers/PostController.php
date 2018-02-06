@@ -23,7 +23,7 @@ class PostController extends Controller
          *
          * https://laravel.com/docs/5.5/collections
          */
-        $posts = Post::orderBy('created_at')->get();
+        $posts = Post::orderBy('created_at')->paginate(3);
 
         /**
          * This refers to a template file at resources/views/posts/all.blade.php
