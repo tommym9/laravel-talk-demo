@@ -23,15 +23,13 @@ class PostController extends Controller
          *
          * https://laravel.com/docs/5.5/collections
          */
-        $posts = Post::orderBy('created_at')->paginate(3);
+        $posts = Post::orderBy('created_at')->paginate(3)->with('comments');
 
         /**
          * This refers to a template file at resources/views/posts/all.blade.php
          * Any variables we pass here in the array become available.
          */
-        return view('posts.all', compact(
-            'posts'
-        ));
+        return view('posts.all', compact('posts'));
     }
 
     public function show($slug)

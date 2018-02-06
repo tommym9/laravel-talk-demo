@@ -18,4 +18,12 @@
 
     <p>{{ $post->body }}</p>
 
+    <a href="{{ route('comments.create', $post->id) }}">Add a comment</a>
+
+
+    @if(count($post->comments) > 0)
+        <h3>Comments</h3>
+        @each('comments.show', $post->comments, 'comment')
+    @endif
+
 @endsection
