@@ -1,3 +1,11 @@
+<?php
+/**
+ * Available variables
+ *  - Post: The Post model
+ *  - Comments: A collection of comments for this post @todo
+ */
+?>
+
 @extends('layouts.app')
 
 @section('content')

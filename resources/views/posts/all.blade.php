@@ -1,3 +1,10 @@
+<?php
+/**
+ * Available variables
+ *  - Posts: A Collection of posts
+ */
+?>
+
 @extends('layouts.app')
 
 @section('content')
