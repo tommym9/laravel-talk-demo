@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/**
+ * Post routes
+ */
 Route::get('/posts', [
     'as' => 'posts.all',
     'uses' => 'PostController@index',
@@ -24,4 +27,17 @@ Route::get('/posts', [
 Route::get('/posts/{post}', [
     'as' => 'posts.show',
     'uses' => 'PostController@show',
+]);
+
+/**
+ * Comment routes
+ */
+Route::get('/posts/{post}/add-comment', [
+    'as' => 'comments.create',
+    'uses' => 'CommentController@create',
+]);
+
+Route::post('/posts/{post}/add-comment', [
+    'as' => 'comments.store',
+    'uses' => 'CommentController@store',
 ]);
