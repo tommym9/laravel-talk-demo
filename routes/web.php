@@ -21,7 +21,7 @@ Route::get('/', function () {
 Route::get('/posts', [
     'as' => 'posts.all',
     'uses' => 'PostController@index',
-    //'middleware' => ['permission:view_report_any']
+    //'middleware' => ['permission:view_posts']
 ]);
 
 Route::get('/posts/{post}', [
