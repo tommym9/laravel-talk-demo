@@ -99,6 +99,16 @@
             color: white;
         }
 
+        .alert {
+            padding: 20px;
+            background-color: orangered;
+            color: white;
+        }
+
+        .alert ul, li {
+            list-style-type: none;
+        }
+
     </style>
 </head>
 <body>
