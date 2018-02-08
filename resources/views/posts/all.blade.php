@@ -14,7 +14,7 @@
     </div>
 
     @if(count($posts) > 0)
-        @foreach( $posts as $post)
+        @foreach($posts as $post)
             @php
                 /**
                 * - Do ANY PHP here if you like.

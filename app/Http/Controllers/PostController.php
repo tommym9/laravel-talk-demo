@@ -34,6 +34,13 @@ class PostController extends Controller
         ));
     }
 
+    /**
+     * Show a single post.
+     *
+     * @param $slug
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function show($slug)
     {
         /**
