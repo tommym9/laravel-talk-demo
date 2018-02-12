@@ -50,7 +50,7 @@ class PostController extends Controller
         $post = Post::findBySlugOrFail($slug);
 
         // We can check auth here in a few ways.
-        //https://laravel.com/docs/5.4/authorization#introduction
+        // https://laravel.com/docs/5.4/authorization#introduction
 
         /*
          * Return a view of the post itself.

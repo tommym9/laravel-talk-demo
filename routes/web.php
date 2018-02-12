@@ -24,7 +24,7 @@ Route::get('/posts', [
     //'middleware' => ['permission:view_posts']
 ]);
 
-Route::get('/posts/{post}', [
+Route::get('/posts/{slug}', [
     'as' => 'posts.show',
     'uses' => 'PostController@show',
 ]);
@@ -32,7 +32,7 @@ Route::get('/posts/{post}', [
 /**
  * Comment routes
  */
-Route::get('/posts/{post}/add-comment', [
+Route::get('/posts/{slug}/add-comment', [
     'as' => 'comments.create',
     'uses' => 'CommentController@create',
 ]);
