@@ -32,7 +32,7 @@ Route::get('/posts/{slug}', [
 /**
  * Comment routes
  */
-Route::get('/posts/{slug}/add-comment', [
+Route::get('/posts/{post}/add-comment', [
     'as' => 'comments.create',
     'uses' => 'CommentController@create',
 ]);
